@@ -2,11 +2,11 @@ package service;
 
 public class PalindromeService {
 
-    public static boolean isPalindrome(int nr) {
+    public static boolean isPalindrome(int number) {
 
         int reversedNumber = 0;
 
-        int value = nr;
+        int value = number;
 
         while (value > 0) {
 
@@ -15,7 +15,7 @@ public class PalindromeService {
 
         }
 
-        return nr == reversedNumber;
+        return number == reversedNumber;
     }
 
 }
