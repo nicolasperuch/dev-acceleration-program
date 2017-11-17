@@ -2,16 +2,30 @@ package service;
 
 public class SumSquareDifference {
 
-    public void CalculateService(int n){
-        int squareValue = 0;
-        int totalSquareValue = 0;
-        int totalSum = 0;
-        for(int i = 0; i <= n; i++){
-            squareValue += Math.pow(i, 2 );
-            totalSquareValue += i;
-        }
-        totalSum += Math.pow(totalSquareValue, 2 );
-        System.out.println(squareValue);
-        System.out.println(totalSum);
+    private int squareValue;
+    private int sumTotalValue;
+    private int totalSquareValue;
+    private int calculateDiference;
+
+
+    public SumSquareDifference() {
+        this.squareValue = 0;
+        this.sumTotalValue = 0;
+        this.totalSquareValue = 0;
+    }
+
+    public int CalculateService(int n){
+        squareValue += Math.pow(n, 2 );
+        totalSquareValue += n;
+
+        return squareValue;
+    }
+    public int TotalSum(){
+        sumTotalValue += Math.pow(totalSquareValue,2);
+        calculateDiference = sumTotalValue - squareValue;
+
+        return calculateDiference;
     }
 }
+
+
