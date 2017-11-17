@@ -7,6 +7,13 @@ public class SumSquareDifference {
     private int totalSquareValue;
     private int calculateDiference;
 
+    public int getSquareValue() {
+        return squareValue;
+    }
+
+    public int getTotalSquareValue() {
+        return totalSquareValue;
+    }
 
     public SumSquareDifference() {
         this.squareValue = 0;
@@ -20,9 +27,9 @@ public class SumSquareDifference {
 
         return squareValue;
     }
-    public int TotalSum(){
-        sumTotalValue += Math.pow(totalSquareValue,2);
-        calculateDiference = sumTotalValue - squareValue;
+    public int TotalSum(int a, int b){
+        sumTotalValue += Math.pow(b,2);
+        calculateDiference = sumTotalValue - a;
 
         return calculateDiference;
     }

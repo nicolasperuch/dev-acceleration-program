@@ -9,7 +9,7 @@ public class Process{
         for(int i = 1; i <= TARGET_NUMBER; i++){
            service.CalculateService(i);
            if(i == 100){
-               System.out.println(service.TotalSum());
+               System.out.println(service.TotalSum(service.getSquareValue(), service.getTotalSquareValue()));
            }
         }
 

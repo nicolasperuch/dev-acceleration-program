@@ -19,7 +19,7 @@ public class SumSquareDifferenceTeste {
 
     @Test
     public void TestSumtotal(){
-        Assert.assertEquals(sumSquareDifference.TotalSum(),25);
+        Assert.assertEquals(sumSquareDifference.TotalSum(385,55),2640);
     }
 
 }
