@@ -9,7 +9,12 @@ public class Process {
     }
 
     public void start(){
-        service.insertData(service.getxProduct());
-        service.insertData(service.getyProduct());
+        service.insertData(service.getXProduct());
+        service.insertData(service.getYProduct());
+        service.startFinalValuesProcess();
+
+        System.out.println("X : " + service.getXProductFinalValue());
+        System.out.println("Y : " + service.getYProductFinalValue());
+        System.out.println("Z : " + service.getZProductFinalValue());
     }
 }

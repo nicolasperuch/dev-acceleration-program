@@ -3,6 +3,7 @@ package service;
 import model.Product;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Service {
@@ -47,27 +48,66 @@ public class Service {
         return input >= 0 && input <= 9;
     }
 
-    public Product getxProduct() {
+    public void startFinalValuesProcess(){
+        processZProduct();
+        this.xProduct.setFinalValue(processFinalValue(getXProduct()));
+        this.yProduct.setFinalValue(processFinalValue(getYProduct()));
+        this.zProduct.setFinalValue(processFinalValue(getZProduct()));
+    }
+
+    private void processZProduct(){
+        List<Integer> zList = new ArrayList<>();
+        int zValue;
+
+        for(int i=0; i < 3 ; i++){
+            zValue = (getXProduct().getValues().get(i) * getYProduct().getValues().get(i));
+            zValue = zValue % 10;
+            zList.add(zValue);
+        }
+        this.zProduct.setValues(zList);
+    }
+
+    private int processFinalValue (Product product){
+        int finalValue = 1;
+        for(int value : product.getValues()){
+            finalValue *= value;
+        }
+        return finalValue;
+    }
+
+    public Product getXProduct() {
         return xProduct;
     }
 
-    public void setxProduct(Product xProduct) {
+    public void setXProduct(Product xProduct) {
         this.xProduct = xProduct;
     }
 
-    public Product getyProduct() {
+    public Product getYProduct() {
         return yProduct;
     }
 
-    public void setyProduct(Product yProduct) {
+    public void setYProduct(Product yProduct) {
         this.yProduct = yProduct;
     }
 
-    public Product getzProduct() {
+    public Product getZProduct() {
         return zProduct;
     }
 
-    public void setzProduct(Product zProduct) {
+    public void setZProduct(Product zProduct) {
         this.zProduct = zProduct;
+    }
+
+    public int getXProductFinalValue(){
+        return xProduct.getFinalValue();
+    }
+
+    public int getYProductFinalValue(){
+        return yProduct.getFinalValue();
+    }
+
+    public int getZProductFinalValue(){
+        return zProduct.getFinalValue();
     }
 }
