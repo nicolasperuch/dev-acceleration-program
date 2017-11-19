@@ -10,5 +10,8 @@ public class Process {
 
     public void start(){
         service.insertData();
+        service.calculateValueToBePaid();
+
+        System.out.println("The value to be paid is : " + service.getFinalValue());
     }
 }

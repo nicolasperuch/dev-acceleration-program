@@ -28,4 +28,19 @@ public class Service {
         area = input.nextDouble();
         return area;
     }
+
+    public void calculateValueToBePaid() {
+        double freeArea = calculateFreeArea();
+        double finalValue = freeArea * terrain.getFREE_AREA_VALUE();
+        finalValue += terrain.getBuiltedArea() * terrain.getBUILTED_AREA_VALUE();
+        terrain.setFinalValue(finalValue);
+    }
+
+    private double calculateFreeArea(){
+        return terrain.getTotalArea() - terrain.getBuiltedArea();
+    }
+
+    public double getFinalValue(){
+        return terrain.getFinalValue();
+    }
 }

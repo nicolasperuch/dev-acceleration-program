@@ -2,10 +2,12 @@ package model;
 
 public class Terrain {
 
-    private double totalArea;
-    private double builtedArea;
     private final double FREE_AREA_VALUE = 3.8;
     private final double BUILTED_AREA_VALUE = 5.0;
+
+    private double totalArea;
+    private double builtedArea;
+    private double finalValue;
 
     public double getTotalArea() {
         return totalArea;
@@ -29,5 +31,13 @@ public class Terrain {
 
     public double getBUILTED_AREA_VALUE() {
         return BUILTED_AREA_VALUE;
+    }
+
+    public double getFinalValue() {
+        return finalValue;
+    }
+
+    public void setFinalValue(double finalValue) {
+        this.finalValue = finalValue;
     }
 }
