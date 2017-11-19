@@ -9,6 +9,7 @@ public class Service {
     private final String SALARY = "salary";
     private final String DISCOUNT = "discount";
     private final String LOAN = "loan";
+    private final double RANGE_MAX_LOAN_VALUE_PERCENTAGE = 0.3;
 
     private Client client;
 
@@ -38,5 +39,22 @@ public class Service {
         return value > 0;
     }
 
+    public void loanProcess(){
+        double processedSalary;
 
+        processedSalary = processSalary();
+        if(isValidLoan(processedSalary)){
+            System.out.println("Aproved Loan");
+        }else{
+            System.out.println("Loan denied");
+        }
+    }
+
+    private double processSalary(){
+        return client.getSalary() - client.getDiscount();
+    }
+
+    private boolean isValidLoan(double processedSalary){
+        return client.getLoan() <= (processedSalary * RANGE_MAX_LOAN_VALUE_PERCENTAGE);
+    }
 }

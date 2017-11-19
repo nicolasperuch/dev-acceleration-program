@@ -7,6 +7,6 @@ public class Process {
     public void start(){
         service = new Service();
         service.insertData();
-
+        service.loanProcess();
     }
 }
