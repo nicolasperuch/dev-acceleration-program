@@ -8,6 +8,8 @@ public class Product {
     private List<Integer> values;
     private int finalValue;
 
+    public Product(){}
+
     public Product(String name, List<Integer> values) {
         this.name = name;
         this.values = values;
