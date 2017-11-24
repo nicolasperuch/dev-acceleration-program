@@ -1,16 +1,11 @@
 package Service;
 
 public class Service {
-    private double percentageDistribution;
-    private double tax;
+    private final double PERCENTAGE_DISTRIBUTION = 28;
+    private final double TAX = 45;
 
-    public Service() {
-        this.percentageDistribution = 28;
-        this.tax = 45;
-    }
-
-    public double Valor(double value) {
-        double result = ((value * percentageDistribution)/100) + ((value * tax)/100) + value ;
+    public double calculateValueWhithPercen(double value) {
+        double result = ((value * PERCENTAGE_DISTRIBUTION)/100) + ((value * TAX)/100) + value ;
         return result;
     }
 }

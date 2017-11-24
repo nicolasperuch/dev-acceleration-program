@@ -1,5 +1,5 @@
 public class Runner {
     public static void main(String[] args) {
-        new Process().ConsultaPerson();
+        new Process().start();
     }
 }
