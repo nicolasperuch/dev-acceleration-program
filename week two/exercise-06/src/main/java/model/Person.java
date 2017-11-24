@@ -1,13 +1,18 @@
 package model;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Person {
     private String name;
     private Date birthDate;
+
+    public Person() {
+    }
+
+    public Person(String name, Date birthDate) {
+        this.name = name;
+        this.birthDate = birthDate;
+    }
 
     public String getName() {
         return name;
@@ -21,14 +26,5 @@ public class Person {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM");
-        df.setLenient(false);
-        try {
-            this.birthDate = df.parse(birthDate);
-        } catch (ParseException e) {
-            // se cair aqui, a data é inválida
-            System.err.println("Data inválida");
-        }
-    }
 }
+
