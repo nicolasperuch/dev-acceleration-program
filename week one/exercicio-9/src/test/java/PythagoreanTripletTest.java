@@ -1,4 +1,4 @@
-import Service.PythagoreanTriplet;
+import service.Service;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,11 +7,11 @@ import org.junit.Test;
  * Created by ilegra0267 on 17/11/17.
  */
 public class PythagoreanTripletTest {
-    private PythagoreanTriplet service;
+    private Service service;
 
     @Before
     public void serUp(){
-        service = new PythagoreanTriplet();
+        service = new Service();
     }
 
     @Test
