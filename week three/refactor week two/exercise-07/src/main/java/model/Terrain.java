@@ -2,8 +2,11 @@ package model;
 
 public class Terrain {
 
-    private final double FREE_AREA_VALUE = 3.8;
-    private final double BUILTED_AREA_VALUE = 5.0;
+    public final double FREE_AREA_VALUE = 3.8;
+    public final double BUILTED_AREA_VALUE = 5.0;
+
+    public final String TOTAL_AREA = "total";
+    public final String BUILTED_AREA = "builted";
 
     private double totalArea;
     private double builtedArea;
