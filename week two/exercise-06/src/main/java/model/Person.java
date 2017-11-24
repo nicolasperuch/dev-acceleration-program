@@ -21,8 +21,14 @@ public class Person {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) throws ParseException {
-        DateFormat df = new SimpleDateFormat("dd/MM");
-        this.birthDate = df.parse(birthDate);
+    public void setBirthDate(String birthDate) {
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM");
+        df.setLenient(false);
+        try {
+            this.birthDate = df.parse(birthDate);
+        } catch (ParseException e) {
+            // se cair aqui, a data é inválida
+            System.err.println("Data inválida");
+        }
     }
 }

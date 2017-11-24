@@ -24,8 +24,8 @@ public class Process {
             i++;
         }
 
-        for (int aux = 0; aux <= lista.size(); aux ++){
-            System.out.println(lista.get(i).getName() + "  " + lista.get(i).getBirthDate());
+        for (int aux = 0; aux < lista.size(); aux ++){
+            System.out.println(lista.get(aux).getName() + "  " + lista.get(aux).getBirthDate());
         }
 
     }
