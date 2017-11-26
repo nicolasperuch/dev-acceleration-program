@@ -33,7 +33,7 @@ public class Service {
             message.showMessage(message.INPUT_MESSAGE_BIRTH_DATE);
             birth = input.next();
 
-            if (inputValidation.isValidateBirthday(birth)) {
+            if (inputValidation.isValidBirthday(birth)) {
                 list.add(new Person(name,parseDate(birth)));
                 i++;
             }

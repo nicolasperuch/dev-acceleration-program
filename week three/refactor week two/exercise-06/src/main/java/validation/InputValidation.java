@@ -14,7 +14,7 @@ public class InputValidation {
         this.message = new Message();
     }
 
-    public boolean isValidateBirthday(String birthDate) {
+    public boolean isValidBirthday(String birthDate) {
         SimpleDateFormat df = new SimpleDateFormat("dd/MM");
         df.setLenient(false);
         try {
