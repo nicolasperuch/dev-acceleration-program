@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
@@ -8,7 +9,9 @@ public class Product {
     private List<Integer> values;
     private int finalValue;
 
-    public Product(){}
+    public Product(){
+        this.values = new ArrayList<>();
+    }
 
     public Product(String name, List<Integer> values) {
         this.name = name;

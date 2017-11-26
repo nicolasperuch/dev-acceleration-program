@@ -19,9 +19,17 @@ public class ProductBusiness {
     public int processZValue(Product xProduct, Product yProduct, int position){
         int zValue;
 
-        zValue = (xProduct.getValues().get(position) * yProduct.getValues().get(position));
-        zValue = zValue % 10;
+        zValue = multiplyingEachXYValue(xProduct, yProduct, position);
+        zValue = modZValuePerTen(zValue);
         return zValue;
+    }
+
+    public int multiplyingEachXYValue(Product xProduct, Product yProduct, int position) {
+        return xProduct.getValues().get(position) * yProduct.getValues().get(position);
+    }
+
+    public int modZValuePerTen (int zValue){
+        return zValue % 10;
     }
 
     public int processFinalValue (Product product){
