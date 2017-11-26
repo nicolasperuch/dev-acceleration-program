@@ -17,7 +17,7 @@ public class  ServiceCredit {
         if (value >= 0 && value <= 200) {
             return OpcoesMenu.NENHUM_CREDITO;
         }
-        if (value >= 200 && value <= 400) {
+        if (value > 200 && value <= 400) {
             return OpcoesMenu.CREDITO_20_CREDITO;
         }
         if (value > 400 && value <= 600) {

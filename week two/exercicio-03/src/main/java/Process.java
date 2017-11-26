@@ -9,7 +9,7 @@ public class Process {
     }
 
     public void start(){
-        service.ConsultaPerson();
+        service.ConsultPerson();
     }
 
 }

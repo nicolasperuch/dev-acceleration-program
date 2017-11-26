@@ -13,7 +13,13 @@ public class SericeTest {
     }
 
     @Test
-    public void isPrimeTestWhenValueisPrimeShouldReturnTrue(){
-        Assert.assertEquals(service.Valor(5000),8650,2);
+    public void calculateValueWhithPercenTest(){
+
+        Assert.assertEquals(service.calculateValueWhithPercen(5000),8650,2);
     }
+    @Test
+    public void calculateValueWhithPercenTest2(){
+        Assert.assertEquals(service.calculateValueWhithPercen(1000),1730,2);
+    }
+
 }

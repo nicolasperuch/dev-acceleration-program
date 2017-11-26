@@ -25,7 +25,7 @@ public class ServicePerson {
 
     }
 
-    public void ConsultaPerson(){
+    public void ConsultPerson(){
 
         for(int i = 0; i < lista.size(); i++){
             if(isTheOldest(i)) {
