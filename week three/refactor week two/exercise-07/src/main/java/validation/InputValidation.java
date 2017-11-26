@@ -12,16 +12,16 @@ public class InputValidation {
         return validateBuiltedArea(area, terrain);
     }
 
-    private boolean isTotalArea(String field){
+    public boolean isTotalArea(String field){
         return field == "total";
     }
 
-    private boolean validateTotalArea(double area){
-        return area > 0;
+    public boolean validateTotalArea(double area){
+            return area > 0;
     }
 
-    private boolean validateBuiltedArea(double area, Terrain terrain){
-        return area >= 0 && area <= terrain.getTotalArea();
+    public boolean validateBuiltedArea(double area, Terrain terrain){
+            return area >= 0 && area <= terrain.getTotalArea();
     }
 
 

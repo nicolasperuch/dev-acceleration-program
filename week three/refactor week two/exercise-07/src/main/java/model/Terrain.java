@@ -9,6 +9,7 @@ public class Terrain {
     public final String BUILTED_AREA = "builted";
 
     private double totalArea;
+    private double freeArea;
     private double builtedArea;
     private double finalValue;
 
@@ -34,6 +35,14 @@ public class Terrain {
 
     public double getBUILTED_AREA_VALUE() {
         return BUILTED_AREA_VALUE;
+    }
+
+    public double getFreeArea() {
+        return freeArea;
+    }
+
+    public void setFreeArea(double freeArea) {
+        this.freeArea = freeArea;
     }
 
     public double getFinalValue() {

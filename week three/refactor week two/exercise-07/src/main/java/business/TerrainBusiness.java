@@ -5,14 +5,21 @@ import model.Terrain;
 public class TerrainBusiness {
 
     public double calculateValueToBePaid(Terrain terrain) {
-        double freeArea = calculateFreeArea(terrain);
-        double finalValue = freeArea * terrain.getFREE_AREA_VALUE();
-        finalValue += terrain.getBuiltedArea() * terrain.getBUILTED_AREA_VALUE();
+        terrain.setFreeArea(calculateFreeArea(terrain));
+        terrain.setFinalValue(calculateBuiltedAreaValue(terrain) + calculateFreeAreaValue(terrain));
 
-        return finalValue;
+        return terrain.getFinalValue();
     }
 
-    private double calculateFreeArea(Terrain terrain){
+    public double calculateFreeArea(Terrain terrain){
         return terrain.getTotalArea() - terrain.getBuiltedArea();
+    }
+
+    public double calculateFreeAreaValue(Terrain terrain){
+        return terrain.getFreeArea() * terrain.getFREE_AREA_VALUE();
+    }
+
+    public double calculateBuiltedAreaValue(Terrain terrain){
+        return terrain.getBuiltedArea() * terrain.getBUILTED_AREA_VALUE();
     }
 }
