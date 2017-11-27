@@ -18,15 +18,24 @@ public class ServiceFibonacciTest {
     }
 
     @Test
-    public void testaFibonaccivalorCorreto(){
+    public void FibonacciTest(){
         Assert.assertEquals(service.fibo(1), 2,0);
     }
+
     @Test
-    public void testaFibonacci(){
+    public void FibonacciTest1(){
         Assert.assertEquals(service.fibo(2),3);
     }
+
     @Test
-    public void testaFibonacciNegativo(){
-        Assert.assertEquals(service.fibo(-2),-1);
+    public void isEvenValueTrue(){
+
+        Assert.assertTrue(String.valueOf(service.isEvenValue(8)),true);
+    }
+
+    @Test
+    public void isEvenValueFalse(){
+
+        Assert.assertFalse(String.valueOf(service.isEvenValue(5)),false);
     }
 }
