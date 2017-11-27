@@ -18,8 +18,13 @@ public class SumSquareDifferenceTeste {
     }
 
     @Test
+    public void TestCalculateServiceValueEven(){
+        Assert.assertEquals(sumSquareDifference.CalculateService(12),144);
+    }
+
+    @Test
     public void TestSumtotal(){
-        Assert.assertEquals(sumSquareDifference.TotalSum(385,55),2640);
+        Assert.assertEquals(sumSquareDifference.TotalSum(385,60),3215);
     }
 
 }
