@@ -1,11 +1,21 @@
 
-import Service.ServiceCredit;
+import business.BusinessCredit;
+import message.Message;
+import service.ServiceCredit;
 
 import java.util.Scanner;
 
 public class Process {
 
     ServiceCredit service = new ServiceCredit();
+    BusinessCredit businessCredit = new BusinessCredit();
+    Message message = new Message();
+
+    public Process() {
+        this.service = new ServiceCredit();
+        this.businessCredit = new BusinessCredit();
+        this.message = new Message();
+    }
 
     public void start(){
 
@@ -15,16 +25,19 @@ public class Process {
 
         switch (service.validateCredit(value)){
             case NENHUM_CREDITO:
-                System.out.println(" Seu saldo médio é: " + value + "\n você não pode receber crédito" );
+                message.showCreditMessage(value);
                 break;
             case CREDITO_20_CREDITO:
-                System.out.println(" Seu saldo médio é: " + value + " e sua porcetagem de crédito será de " + service.calculateCredit(value,20) + " reais");
+                message.showCreditMessage(value, businessCredit, 20);
                 break;
             case SALDO_30_CREDITO:
-                System.out.println(" Seu saldo médio é: " + value + " e sua porcetagem de crédito será de " + service.calculateCredit(value,30) + " reais");
+                message.showCreditMessage(value, businessCredit, 30);
                 break;
             case SALDO_40_CREDITO:
-                System.out.println(" Seu saldo médio é: " + value + " e sua porcetagem de crédito será de " + service.calculateCredit(value,40) + " reais");
+                message.showCreditMessage(value, businessCredit, 40);
+                break;
+            default:
+                message.showInvalidMessage();
                 break;
         }
     }
