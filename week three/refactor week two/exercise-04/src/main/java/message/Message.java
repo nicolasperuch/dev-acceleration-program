@@ -19,4 +19,7 @@ public class Message {
         System.out.println("Dados Inválidos!");
     }
 
+    public void inputMessage(){
+        System.out.println("informe o valor de saldo médio: ");
+    }
 }

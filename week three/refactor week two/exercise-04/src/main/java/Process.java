@@ -20,14 +20,14 @@ public class Process {
     public void start(){
 
         Scanner le = new Scanner(System.in);
-        System.out.println("informe o valor de saldo médio\n");
+        message.inputMessage();
         double value = le.nextDouble();
 
         switch (service.validateCredit(value)){
             case NENHUM_CREDITO:
                 message.showCreditMessage(value);
                 break;
-            case CREDITO_20_CREDITO:
+            case SALDO_20_CREDITO:
                 message.showCreditMessage(value, businessCredit, 20);
                 break;
             case SALDO_30_CREDITO:

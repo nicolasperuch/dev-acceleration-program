@@ -6,7 +6,7 @@ public class  ServiceCredit {
 
     public enum OpcoesMenu {
         NENHUM_CREDITO(1),
-        CREDITO_20_CREDITO(2),
+        SALDO_20_CREDITO(2),
         SALDO_30_CREDITO(3),
         SALDO_40_CREDITO(4),
         OPCAO_INVALIDA(5);
@@ -29,7 +29,7 @@ public class  ServiceCredit {
             return OpcoesMenu.NENHUM_CREDITO;
         }
         if (businessCredit.isValueBetween201And400(value)) {
-            return OpcoesMenu.CREDITO_20_CREDITO;
+            return OpcoesMenu.SALDO_20_CREDITO;
         }
         if (businessCredit.isValueBetween401And600(value)) {
             return OpcoesMenu.SALDO_30_CREDITO;
@@ -40,4 +40,7 @@ public class  ServiceCredit {
         return OpcoesMenu.OPCAO_INVALIDA;
     }
 
+    public void setBusinessCredit(BusinessCredit businessCredit) {
+        this.businessCredit = businessCredit;
+    }
 }
