@@ -1,5 +1,6 @@
 package service;
 
+import message.Message;
 import model.Person;
 
 import java.util.ArrayList;
@@ -9,10 +10,10 @@ import java.util.Scanner;
 public class Service {
 
     private List<Person> people;
-    private String name;
-    private int age;
+
     private Person oldest;
     private Person newest;
+    private Message message;
 
     public Service() {
         this.people = new ArrayList<>();
@@ -23,11 +24,12 @@ public class Service {
     public void insertData(){
         for (int i=0; i < 3 ; i++){
             Scanner input = new Scanner(System.in);
+            String name;
+            int age;
 
-            System.out.println("Person number " + (i+1));
-            System.out.printf("Insert the name: ");
+            message.showMessage(message.INPUT_MESSAGE_NAME);
             name = input.nextLine();
-            System.out.printf("Insert the age: ");
+            message.showMessage(message.INPUT_MESSAGE_YEARS_OLD);
             age = input.nextInt();
 
             people.add(new Person(name, age));
@@ -74,37 +76,5 @@ public class Service {
 
     public void setPeople(List<Person> people) {
         this.people = people;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Person getOldest() {
-        return oldest;
-    }
-
-    public void setOldest(Person oldest) {
-        this.oldest = oldest;
-    }
-
-    public Person getNewest() {
-        return newest;
-    }
-
-    public void setNewest(Person newest) {
-        this.newest = newest;
     }
 }

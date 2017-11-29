@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class ServicePerson {
     private  int age = 0;
     private double percentage = 0;
-    private int quantityValidWoman = 0;
+    private double quantityValidWoman = 0;
     private ArrayList<Person> lista;
 
 
@@ -15,7 +15,7 @@ public class ServicePerson {
     public ServicePerson() {
         lista = new ArrayList<>();
 
-        lista.add(new Person("F", "louros", "azul", 20));
+        lista.add(new Person("F", "louros", "azul",40));
         lista.add(new Person("M", "pretos", "castanho", 31));
         lista.add(new Person("F", "castanhos", "verde", 30));
         lista.add(new Person("F", "castanhos", "preto", 25));
@@ -27,17 +27,10 @@ public class ServicePerson {
 
     public void ConsultPerson(){
 
-        for(int i = 0; i < lista.size(); i++){
-            if(isTheOldest(i)) {
-                this.age = lista.get(i).getAge();
-            }
+        lista.forEach(n -> isTheOldest(n));
+        lista.forEach(n -> validateWoman(n));
 
-            if(validateWoman(i)){
-                quantityValidWoman++;
-            }
-        }
         System.out.printf("Pessoa Mais Velha " + age + " anos \n");
-
         System.out.println(calculatePersentage(lista) + "% das pessoas são do sexo feminino e de olhos verdes e cabelo loiro");
     }
 
@@ -46,11 +39,15 @@ public class ServicePerson {
         return percentage;
     }
 
-    private boolean isTheOldest(int i){
-        return age < lista.get(i).getAge();
+    public int isTheOldest(Person person){
+            if(age < person.getAge())
+               this.age = person.getAge();
+            return this.age;
     }
 
-    private boolean validateWoman(int i){
-        return lista.get(i).getSex().contains("F") && lista.get(i).getHairColor().contains("louros") && lista.get(i).getEyesColor().contains("verde") && lista.get(i).getAge() >= 18 && lista.get(i).getAge() <= 35;
+
+    public double validateWoman(Person person){
+        if(person.getSex().contains("F") && person.getHairColor().contains("louros") && person.getEyesColor().contains("verde") && person.getAge() >=18 && person.getAge() <= 35);
+        return this.quantityValidWoman ++;
     }
 }
