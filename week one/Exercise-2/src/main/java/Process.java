@@ -6,9 +6,9 @@ public class Process {
 
         Fibonacci service = new Fibonacci();
         final double TARGET_NUMBER = 4000000;
-        int i = 1;
-        while(i <= TARGET_NUMBER){
-            i = service.fibo(i);
+        int currentValue = 1;
+        while(currentValue <= TARGET_NUMBER){
+            currentValue = service.calculateFibonnaci(currentValue);
         }
         System.out.println(service.getSumValue());
     }

@@ -19,12 +19,7 @@ public class ServiceFibonacciTest {
 
     @Test
     public void FibonacciTest(){
-        Assert.assertEquals(service.fibo(1), 2,0);
-    }
-
-    @Test
-    public void FibonacciTest1(){
-        Assert.assertEquals(service.fibo(2),3);
+        Assert.assertEquals(service.calculateFibonnaci(1), 2,0);
     }
 
     @Test
