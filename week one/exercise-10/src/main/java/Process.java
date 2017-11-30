@@ -7,8 +7,10 @@ public class Process {
 
     public void start(){
 
-        for(long i=2;i<TARGET_NUMBER; i++)
+        for(long i = 2; i < TARGET_NUMBER; i++)
+
             if(service.isPrime(i))
+
                 service.addValueToSumOfAllPrimeNumbers(i);
 
         System.out.println(service.getSumOfAllPrimeNumbers());

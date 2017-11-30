@@ -22,11 +22,12 @@ public class ServicePrime {
     }
 
     public boolean isPrime(double value){
-        for(int i=2;i<value;i++) {
+        for(int i = 2; i < value; i++) {
+
             if(value%i==0)
                 return false;
         }
+
         return true;
     }
-
 }
