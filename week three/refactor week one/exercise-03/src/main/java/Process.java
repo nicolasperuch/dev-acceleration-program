@@ -1,27 +1,38 @@
+import business.FactoryNumberBusiness;
+import model.FactoryNumberModel;
 import service.Service;
 
 public class Process {
 
     private Service service;
+    private FactoryNumberModel factoryNumberModel;
+    private FactoryNumberBusiness factoryNumberBusiness;
 
 
     public Process() {
         this.service = new Service();
+        this.factoryNumberModel = new FactoryNumberModel();
+        this.factoryNumberBusiness = new FactoryNumberBusiness();
     }
 
     public void start(){
 
-
         int count = 2;
 
-        while (service.isTargetNumberBiggerThanCount(count)) {
-
-            if (!service.isPrimeFactoryOfTargetNumber(count)) {
+        while (factoryNumberBusiness.isTargetNumberBiggerThanCountSquared(factoryNumberModel, count)){
+            if (!factoryNumberBusiness.isPrimeFactoryOfTargetNumber(factoryNumberModel, count)) {
                 count++;
+            } else {
+                factoryNumberModel = service.processValues(factoryNumberModel, count);
             }
         }
-        service.isTargetNumberBiggerThanLargestFactoryNumber();
 
-        System.out.println(service.getLargestFactoryNumber());
+        if(factoryNumberBusiness.isTargetNumberBiggerThanLargestFactoryNumber(factoryNumberModel)){
+            factoryNumberModel.setLargestFactoryNumber(factoryNumberModel.getTargetNumber());
+        }
+
+
+        System.out.println(factoryNumberModel.getLargestFactoryNumber());
+        System.out.println("Done.");
     }
 }
