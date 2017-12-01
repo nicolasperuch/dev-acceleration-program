@@ -14,8 +14,13 @@ public class PalindromeServiceTest {
     }
 
     @Test
-    public void isPalindrome() throws Exception {
+    public void isPalindromeWhenValueIsPrimeShouldReturnTrue() throws Exception {
         Assert.assertTrue(palindroService.isPalindrome(9009));
+    }
+
+    @Test
+    public void isPalindromeWhenValueIsNotPrimeShouldReturnFalse() throws Exception {
+        Assert.assertFalse(palindroService.isPalindrome(900));
     }
 
 }
