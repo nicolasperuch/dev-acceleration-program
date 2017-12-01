@@ -14,21 +14,21 @@ public class multipleServiceTest {
 
     @Test
     public void isMultipleOf3TrueTest(){
-        Assert.assertTrue(String.valueOf(service.isMultipleOf3(6)),true);
+        Assert.assertTrue(service.isMultipleOf3(6));
     }
 
     @Test
     public void isMultipleOf5TrueTest(){
-        Assert.assertTrue(String.valueOf(service.isMultipleOf5(10)),true);
+        Assert.assertTrue(service.isMultipleOf5(10));
     }
 
     @Test
     public void isMultipleOf3FalseTest(){
-        Assert.assertFalse(String.valueOf(service.isMultipleOf3(10)),false);
+        Assert.assertFalse(service.isMultipleOf3(10));
     }
 
     @Test
     public void isMultipleOf5FalseTest(){
-        Assert.assertFalse(String.valueOf(service.isMultipleOf5(13)),false);
+        Assert.assertFalse(service.isMultipleOf5(13));
     }
 }
