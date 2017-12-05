@@ -18,7 +18,7 @@ public class Fibonacci {
         this.aux = 0;
         this.sumValue = 0;
     }
-    public int fibo(int currentValue) {
+    public int calculateFibonnaci(int currentValue) {
         aux = currentValue;
         currentValue +=  previusValue;
         previusValue = aux;
