@@ -13,7 +13,8 @@ public class Service {
     private final int BASE_ASCII_ALPHABETICAL_START = 64;
 
 
-    // Lê o arquivo "names.txt" utilizando a classe Scanner e adiciona os dados na lista "names.
+    // Lê o arquivo "names.txt" utilizando a classe Scanner e adiciona os dados na lista "names."
+
     public List<String> getNamesFromTxt() throws FileNotFoundException {
         List<String> names = new ArrayList<>();
 
@@ -38,7 +39,7 @@ public class Service {
         return namesAux;
     }
 
-    // Remove as aspas de cada dado da lista "names" e adiciona na lista "namesClear"
+    // Remove as aspas de cada dado da lista "names" e adiciona na lista "namesClear".
     public List<String> removeDoubleQuotesFromEachName(List<String> names) {
         List<String> namesClear = new ArrayList<>();
 
@@ -49,7 +50,7 @@ public class Service {
         return namesClear;
     }
 
-    // Calcula o score total, a soma dos scores de cada dado da lista "names".
+    // Calcula o score total, a soma dos scores de cada dado(nome) da lista "names".
     public long calculateScoreNames(List<String> names) {
         List<String> namesAux = names;
         int alphabeticalNameValue;
@@ -63,7 +64,7 @@ public class Service {
         return allScoreNames;
     }
 
-    // Calcula o score de cada dado da lista "name".
+    // Calcula o score de cada dado(nome) da lista "names".
     public int calculateNameValue(String name) {
 
         int alphabeticalWordValue = 0;
@@ -83,7 +84,7 @@ public class Service {
     }
 
 
-    // Retorna o produto do valor alfabético do nome por sua posição na lista.
+    // Retorna o produto do valor alfabético do dado(nome) por sua posição na lista.
     public int multiplyAlphabeticalNameValuePerPosition(int alphabeticalNameValue, int position){
         return alphabeticalNameValue * position;
     }

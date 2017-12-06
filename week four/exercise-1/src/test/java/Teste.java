@@ -23,6 +23,11 @@ public class Teste {
     }
 
     @Test
+    public void calculateAlphabeticalValueForEachLetter() {
+        Assert.assertEquals(1, service.calculateAlphabeticalValueForEachLetter(65),0);
+    }
+
+    @Test
     public void multiplyAlphabeticalNameValuePerPositionWhenPosition(){
         Assert.assertEquals(49714, service.multiplyAlphabeticalNameValuePerPosition(53,938),0);
     }
@@ -30,11 +35,6 @@ public class Teste {
     @Test
     public void multiplyAlphabeticalNameValuePerPositionWhePositionIsNull(){
         Assert.assertEquals(0, service.multiplyAlphabeticalNameValuePerPosition(53,0),0);
-    }
-
-    @Test
-    public void calculateAlphabeticalValueForEachLetter() {
-        Assert.assertEquals(1, service.calculateAlphabeticalValueForEachLetter(65),0);
     }
 
 }
