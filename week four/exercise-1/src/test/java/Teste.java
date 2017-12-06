@@ -23,7 +23,7 @@ public class Teste {
     }
 
     @Test
-    public void calculateAlphabeticalValueForEachLetter() {
+    public void calculateAlphabeticalValueForEachLetterWhenLetterIsA() {
         Assert.assertEquals(1, service.calculateAlphabeticalValueForEachLetter(65),0);
     }
 
