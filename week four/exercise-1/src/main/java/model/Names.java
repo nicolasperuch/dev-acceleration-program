@@ -5,7 +5,9 @@ import java.util.List;
 
 public class Names {
 
-    List<String> names;
+    private List<String> names;
+
+
 
     public Names() {
         names = new ArrayList<>();

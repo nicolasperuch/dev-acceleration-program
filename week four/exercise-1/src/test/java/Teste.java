@@ -1,16 +1,19 @@
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+import service.Service;
 
-/**
- * Created by ilegra0225 on 05/12/17.
- */
 public class Teste {
+
+    private Service service;
+
+    @Before
+    public void setUp(){
+        service = new Service();
+    }
 
     @Test
     public void teste1(){
-        String name = "ADS";
-        char character = name.charAt(0);
-        //System.out.println(character);
-        int asciiValue = (int) character;
-        System.out.println(asciiValue);
+        Assert.assertEquals(53, service.calculateNameValue("COLIN"),0);
     }
 }
