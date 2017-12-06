@@ -17,7 +17,7 @@ public class Service {
     public List<String> getNamesFromTxt() throws FileNotFoundException {
         List<String> names = new ArrayList<>();
 
-        Scanner sc = new Scanner(new File("names.txt"));""
+        Scanner sc = new Scanner(new File("names.txt"));
         sc.useDelimiter(",");
 
         while (sc.hasNext()) {
