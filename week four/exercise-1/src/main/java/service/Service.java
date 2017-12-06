@@ -1,9 +1,8 @@
 package service;
 
-import model.Names;
-
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,44 +12,43 @@ public class Service {
 
     private final int BASE_ASCII_ALPHABETICAL_START = 64;
 
-    public Names getNamesFromTxt() throws FileNotFoundException {
-        Names names = new Names();
+    public List<String> getNamesFromTxt() throws FileNotFoundException {
+        List<String> names = new ArrayList<>();
 
         Scanner sc = new Scanner(new File("names.txt"));
         sc.useDelimiter(",");
 
         while (sc.hasNext()) {
-            names.addNewNameToTheList(sc.next());
+            names.add(sc.next());
         }
 
         return names;
     }
 
-    public Names orderNamesByAlphabeticalOrder(Names names) {
-        Names namesAux = names;
-        sort(namesAux.getNames());
+    public List<String> orderNamesByAlphabeticalOrder(List<String> names) {
+        List<String> namesAux = names;
+        sort(namesAux);
 
         return namesAux;
     }
 
-    public Names removeDoubleQuotesFromEachName(Names names) {
-        Names namesClear = new Names();
+    public List<String> removeDoubleQuotesFromEachName(List<String> names) {
+        List<String> namesClear = new ArrayList<>();
 
-        for (String name : names.getNames()) {
-            namesClear.addNewNameToTheList(name.replace("\"", ""));
+        for (String name : namesClear) {
+            namesClear.add(name.replace("\"", ""));
         }
 
         return namesClear;
     }
 
-    public long calculateScoreNames(Names names) {
-        Names namesAux = names;
-        List<String> listOfNames = namesAux.getNames();
+    public long calculateScoreNames(List<String> names) {
+        List<String> namesAux = names;
         int alphabeticalNameValue;
         long allScoreNames = 0;
 
-        for (int i=0;i<listOfNames.size();i++) {
-            alphabeticalNameValue = calculateNameValue(listOfNames.get(i));
+        for (int i=0;i<namesAux.size();i++) {
+            alphabeticalNameValue = calculateNameValue(namesAux.get(i));
             allScoreNames += multiplyAlphabeticalNameValuePerPosition(alphabeticalNameValue, i+1);
         }
 
@@ -70,7 +68,7 @@ public class Service {
         return alphabeticalWordValue;
     }
 
-    private int calculateAlphabeticalValueForEachLetter(int asciiValue) {
+    public int calculateAlphabeticalValueForEachLetter(int asciiValue) {
         return asciiValue - BASE_ASCII_ALPHABETICAL_START;
     }
 

@@ -1,12 +1,11 @@
-import model.Names;
 import service.Service;
 
 import java.io.FileNotFoundException;
-import java.math.BigInteger;
+import java.util.List;
 
 public class Runner {
     public static void main(String[] args) throws FileNotFoundException {
-        Names names;
+        List<String> names;
 
         Service service = new Service();
 
@@ -19,13 +18,5 @@ public class Runner {
 
         System.out.println(totalAlphabeticalScoreNames);
 
-
-
-/*
-
-
-
-        return 3;
-    }*/
     }
 }

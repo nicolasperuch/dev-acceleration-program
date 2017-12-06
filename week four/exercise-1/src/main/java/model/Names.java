@@ -7,8 +7,6 @@ public class Names {
 
     private List<String> names;
 
-
-
     public Names() {
         names = new ArrayList<>();
     }
