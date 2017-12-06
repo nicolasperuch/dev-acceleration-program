@@ -50,7 +50,7 @@ public class Service {
         return namesClear;
     }
 
-    // Calcula o score total, a soma dos scores de cada dado(nome) da lista "names".
+    // Calcula o score total, a soma de todos os scores, cada dado(nome) da lista "names".
     public long calculateScoreNames(List<String> names) {
         List<String> namesAux = names;
         int alphabeticalNameValue;
